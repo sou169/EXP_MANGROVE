@@ -1,0 +1,71 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "photo_url": {
+      "type": "string",
+      "description": "URL of the uploaded incident photo"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "GPS latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "GPS longitude coordinate"
+    },
+    "incident_type": {
+      "type": "string",
+      "enum": [
+        "illegal_cutting",
+        "waste_dumping",
+        "water_pollution",
+        "coastal_erosion",
+        "illegal_construction",
+        "other"
+      ],
+      "description": "Type of environmental threat"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the incident"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "investigating",
+        "resolved"
+      ],
+      "default": "pending",
+      "description": "Current status of the report"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium",
+      "description": "Severity level of the incident"
+    },
+    "verified_by": {
+      "type": "string",
+      "description": "Email of authority who verified the report"
+    },
+    "location_name": {
+      "type": "string",
+      "description": "Human-readable location description"
+    }
+  },
+  "required": [
+    "photo_url",
+    "latitude",
+    "longitude",
+    "incident_type",
+    "description"
+  ]
+}
